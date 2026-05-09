@@ -39,3 +39,18 @@ function endGame() {
 
   return { buttonPrimary, input, buttonRestart };
 }
+
+function restartGame() {
+  secret = generateSecret();
+  attemptsLeft = maxAttempts;
+
+  const { buttonPrimary, input, buttonRestart } = endGame();
+
+  buttonPrimary = false;
+  input = false;
+  buttonRestart = true;
+
+  showMessage("Aguardando seu primeiro palpite...");
+  showAttempts();
+  clearField();
+}

@@ -71,4 +71,8 @@ html {
   --radius-md: 1.2rem;
   --radius-lg: 2rem;
   --radius-pill: 99rem;
+
+  --shadow-card: 0 0.8rem 4rem rgba(0, 0, 0, 0.45);
+  --shadow-amber: 0 0 2.4rem var(--clr-amber-glow);
+  --shadow-btn: 0 0.4rem 2rem rgba(245, 166, 35, 0.35);
 }

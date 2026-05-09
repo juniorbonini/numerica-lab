@@ -108,3 +108,25 @@ body {
   pointer-events: none;
   z-index: 0;
 }
+.scanlines {
+  postion: fixed;
+  inset: 0;
+  background: repating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.06) 3px,
+    rgba(0, 0, 0, 0.06) 4px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wrapperContainer {
+  postion: relative;
+  z-index: 1;
+  widht: 100%;
+  max-widht: 64rem;
+  flex-direction: column;
+  gap: var(--sz-6);
+}

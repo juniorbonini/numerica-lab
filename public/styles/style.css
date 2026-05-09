@@ -227,3 +227,36 @@ body {
     opacity: 0.6;
   }
 }
+.cardContainer {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sz-8) var(--sz-8);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sz-8);
+  position: relative;
+  overflow: hidden;
+}
+
+.cardContainer::before,
+.cardContainer::after {
+  content: "";
+  position: absolute;
+  width: var(--sz-8);
+  height: var(--sz-8);
+  border-color: var(--clr-amber);
+  border-style: solid;
+  opacity: 0.4;
+}
+.cardContainer::before {
+  top: var(--sz-4);
+  left: var(--sz-4);
+  border-width: 2px 0 0 2px;
+}
+.cardContainer::after {
+  bottom: var(--sz-4);
+  right: var(--sz-4);
+  border-width: 0 2px 2px 0;
+}

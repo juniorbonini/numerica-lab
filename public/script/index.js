@@ -2,12 +2,10 @@ const maxAttempts = 10;
 const minNumber = 1;
 const maxNumber = 100;
 
-const randomNumber = (min, max) => Math.floor(Math.random() * max) + min;
-const secretNumber = randomNumber(1, 100);
-
 let secret = generateSecret();
 let attemptsLeft = maxAttempts;
 
+const randomNumber = (min, max) => Math.floor(Math.random() * max) + min;
 const getElement = (id) => document.getElementById(id);
 const getValue = (id) => getElement(id).value;
 const clearField = () => (getElement("guessInput").value = "");
@@ -19,7 +17,8 @@ const numberIsHigher = (number) => number > secret;
 const noAttempts = () => attemptsLeft === 0;
 
 function generateSecret() {
-  Math.floor(Math.random() * maxNumber) + minNumber;
+  const secretNumber = randomNumber(1, 100);
+  return secretNumber;
 }
 
 function showMessage(message) {
@@ -41,10 +40,9 @@ function endGame() {
 }
 
 function restartGame() {
+  const { buttonPrimary, input, buttonRestart } = endGame();
   secret = generateSecret();
   attemptsLeft = maxAttempts;
-
-  const { buttonPrimary, input, buttonRestart } = endGame();
 
   buttonPrimary = false;
   input = false;
@@ -53,4 +51,36 @@ function restartGame() {
   showMessage("Aguardando seu primeiro palpite...");
   showAttempts();
   clearField();
+}
+
+function guessSecret() {
+  const inputValue = numbetInt(getValue("guesValue"));
+
+  if (isValidNumber(inputValue)) {
+    showMessage("Digite um número válido entre 1 e 100");
+    return;
+  }
+
+  attemptsLeft--;
+  showAttempts();
+  clearField();
+
+  if (isRightSecret(inputValue)) {
+    showMessage(`Você acertou! O número secreto era ${secret}.`);
+    endGame();
+    return;
+  }
+
+  if (noAttempts()) {
+    showMessage(`Você perdeu! O número secreto era ${secretNumber}.`);
+    engGame();
+    return;
+  }
+
+  if (numberIsHigher(inputValue)) {
+    showMessage("O número secreto é maior, tente novamente!");
+
+    return;
+  }
+  showMessage("O número secreto é menor, tente novamente!");
 }

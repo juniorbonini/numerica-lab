@@ -31,3 +31,11 @@ function showAttempts() {
   const attempts = (getElement("attemptsLeft").textContent = attemptsLeft);
   return attempts;
 }
+
+function endGame() {
+  const buttonPrimary = (getElement("guessButton").disabled = true);
+  const input = (getElement("guessInput").disabled = true);
+  const buttonRestart = (getElement("restartBtn").hidden = false);
+
+  return { buttonPrimary, input, buttonRestart };
+}

@@ -628,3 +628,15 @@ body {
   color: var(--clr-txt-muted);
   white-space: nowrap;
 }
+
+.footerContainer {
+  text-align: center;
+  color: var(--clr-txt-muted);
+  padding-bottom: var(--sz-4);
+  line-height: var(--lh-loose);
+}
+
+.footerContainer em {
+  color: var(--clr-amber-dim);
+  font-style: normal;
+}

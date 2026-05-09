@@ -588,3 +588,43 @@ body {
 .feedbackContainerWarn .feedbackText {
   color: var(--clr-amber);
 }
+.attempts {
+  display: flex;
+  align-items: center;
+  gap: var(--sz-4);
+}
+.attemptsLabel {
+  font-size: var(--fz-xs);
+  color: var(--clr-txt-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.attemptsPips {
+  display: flex;
+  gap: var(--sz-1);
+  flex: 1;
+}
+
+.attemptPip {
+  flex: 1;
+  height: 0.6rem;
+  border-radius: var(--radius-pill);
+  background: var(--clr-amber);
+  transition:
+    background var(--transition-base),
+    opacity var(--transition-base);
+}
+
+.attemptPipUsed {
+  background: var(--clr-border);
+  opacity: 0.4;
+}
+
+.attemptsCount {
+  font-family: var(--font-mono);
+  font-size: var(--fz-sm);
+  color: var(--clr-txt-muted);
+  white-space: nowrap;
+}

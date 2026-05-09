@@ -130,3 +130,59 @@ body {
   flex-direction: column;
   gap: var(--sz-6);
 }
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sz-4);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--sz-4);
+}
+
+.logoIcon {
+  font-family: var(--font-display);
+  font-size: var(--fz-xl);
+  font-weight: var(--fw-bold);
+  display: flex;
+  align-items: center;
+  gap: var(--sz-1);
+  line-height: 1;
+}
+
+.logoBracket {
+  color: var(--clr-amber);
+  opacity: 0.6;
+}
+
+.logoSymbol {
+  color: var(clr-amber);
+  text-shadow: 0 0 1.6rem var(--clr-amber);
+  animation: flicker 4s infinte;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.slug {
+  font-family: var(--font-display);
+  font-size: var(--fz-md);
+  font-weight: var(--fw-bold);
+  color: var(--clr-text-primary);
+  letter-spacing: 0.3em;
+  line-height: 1;
+}
+
+.logoTagline {
+  font-size: var(--fz-xs);
+  color: var(--clr-text-mutted);
+  letter-spacing: 0.3em;
+  line-height: 1;
+}

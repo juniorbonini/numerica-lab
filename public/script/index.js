@@ -26,3 +26,8 @@ function showMessage(message) {
   const msg = (getElement("feedbackText").textContent = message);
   return msg;
 }
+
+function showAttempts() {
+  const attempts = (getElement("attemptsLeft").textContent = attemptsLeft);
+  return attempts;
+}

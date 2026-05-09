@@ -186,3 +186,44 @@ body {
   letter-spacing: 0.3em;
   line-height: 1;
 }
+.badge {
+  font-size: var(--fz-xs);
+  font-family: var(--font-mono);
+  letter-spacing: 0.8em;
+  padding: var(--sz-1) var(--sz-3);
+  border-radius: var(--radius-pill);
+  font-weight: var(--fw-bold);
+}
+
+.badgeLive {
+  background: var(--clr-amber-glow);
+  color: var(--clr-amber);
+  border: 1px solid var(--clr-amber-dim);
+  animation: pulse-badge 2s infinite;
+}
+@keyframes pulse-badge {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes flicker {
+  0%,
+  95%,
+  100% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 0.4;
+  }
+  97% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 0.6;
+  }
+}

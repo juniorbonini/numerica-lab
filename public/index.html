@@ -92,6 +92,23 @@
             Chute ideal agora: <strong id="rangeIdeal">50</strong>
           </div>
         </section>
+        <div class="gameContainer">
+          <label for="guessNumber" class="label">Seu palpite</label>
+          <div class="inputWrapper">
+            <input
+              type="number"
+              id="guessInput"
+              min="1"
+              max="100"
+              placeholder="1 - 100"
+              autocomplete="off"
+            />
+            <button class="btn btnPrimary" id="guessButton" type="button">
+              <span class="btnText">Chutar</span>
+              <span class="btnIcon" aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
       </main>
     </div>
   </body>

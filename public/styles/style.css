@@ -75,4 +75,36 @@ html {
   --shadow-card: 0 0.8rem 4rem rgba(0, 0, 0, 0.45);
   --shadow-amber: 0 0 2.4rem var(--clr-amber-glow);
   --shadow-btn: 0 0.4rem 2rem rgba(245, 166, 35, 0.35);
+
+  --transition-fast: 140ms ease;
+  --transition-base: 260ms ease;
+  --transition-slow: 420ms ease;
+}
+
+body {
+  font-family: var(--font-mono);
+  font-size: var(--fz-base);
+  line-height: var(--lg-normal);
+  color: var(--clr-txt-primary);
+  background-color: var(--clr-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--sz-8) var(--sz-4);
+  overflow-x: hidden;
+}
+
+.bgGrid {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    var(--clr-border) 1px,
+    transparent 1px
+  );
+  background-size: 3.2rem 3.2rem;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
 }

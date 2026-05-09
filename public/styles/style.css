@@ -66,4 +66,9 @@ html {
   --lh-tight: 1.15;
   --lh-normal: 1.55;
   --lh-loose: 1.75;
+
+  --radius-sm: 0.6rem;
+  --radius-md: 1.2rem;
+  --radius-lg: 2rem;
+  --radius-pill: 99rem;
 }

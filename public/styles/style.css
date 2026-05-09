@@ -429,3 +429,56 @@ body {
   color: var(--clr-amber);
   font-family: var(--font-mono);
 }
+
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sz-2);
+}
+.label {
+  font-size: var(--fz-xs);
+  color: var(--clr-txt-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.inputWrapper {
+  display: flex;
+  gap: var(--sz-3);
+}
+
+.input {
+  flex: 1;
+  height: var(--sz-14);
+  background: var(--clr-surface-hi);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  color: var(--clr-txt-primary);
+  font-family: var(--font-mono);
+  font-size: var(--fz-lg);
+  font-weight: var(--fw-bold);
+  padding: 0 var(--sz-5);
+  outline: none;
+  transition:
+    all,
+    0.3s border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.input:webkit-inner-spin-button,
+.input::webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.input::placeholder {
+  color: var(--clr-txt-muted);
+  font-weight: var(--fw-regular);
+  font-size: var(--fz-base);
+}
+
+.input:focus {
+  border-color: var(--clr-amber);
+  box-shadow:
+    0 0 0 3px var(--clr-amber-glow),
+    var(--shadow-amber);
+}

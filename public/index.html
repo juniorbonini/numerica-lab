@@ -109,6 +109,31 @@
             </button>
           </div>
         </div>
+
+        <div
+          class="feedbackContainer"
+          id="feedback"
+          aria-live="polite"
+          role="status"
+        >
+          <p class="feedbackText" id="feedbackText">
+            Aguardando seu primeiro palpite...
+          </p>
+        </div>
+        <div class="attemptsContainer" aria-live="polite">
+          <span class="attemptsLabel">Tentativas restantes</span>
+          <div
+            class="attemptsPips"
+            id="attemptsPips"
+            aria-label="10 tentativas restantes"
+          ></div>
+          <span class="attemptsCount"
+            ><span id="attemptsLeft">10</span> / 10</span
+          >
+        </div>
+        <button class="btn btnGhost" id="restartBtn" type="button" hidden>
+          ↺ Novo Experimento
+        </button>
       </main>
     </div>
   </body>

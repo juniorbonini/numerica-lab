@@ -3,3 +3,35 @@ html {
   box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --clr-bg: #0d0f14;
+  --clr-surface: #13161e;
+  --clr-surface-hi: #1c2030;
+  --clr-border: #252a38;
+  --clr-border-hi: #3a4158;
+
+  --clr-amber: #f5a623;
+  --clr-amber-dim: #c4821a;
+  --clr-amber-glow: rgba(245, 166, 35, 0.18);
+  --clr-amber-glow2: rgba(245, 166, 35, 0.06);
+
+  --clr-txt-primary: #e8eaf0;
+  --clr-txt-secondary: #8b92a8;
+  --clr-txt-muted: #4f566b;
+
+  --clr-success: #3de89e;
+  --clr-success-glow: rgba(61, 232, 158, 0.15);
+
+  --clr-danger: #ff5d6c;
+  --clr-danger-glow: rgba(255, 93, 108, 0.15);
+
+  --clr-warn: #f5a623;
+}

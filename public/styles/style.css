@@ -544,3 +544,47 @@ body {
   cursor: not-allowed;
   transform: none;
 }
+
+.feedbackContainer {
+  background: var(--clr-surface-hi);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: var(--sz-4) var(--sz-6);
+  min-height: var(--sz-12);
+  display: flex;
+  align-items: center;
+  transition:
+    border-color var(--transition-base),
+    background var(--transition-base);
+}
+
+.feedbackContainerSuccess {
+  border-color: var(--clr-success);
+  background: var(--clr-success-glow);
+}
+
+.feedbackContainerDanger {
+  border-color: var(--clr-danger);
+  background: var(--clr-danger-glow);
+}
+
+.feedbackContainerWarn {
+  border-color: var(--clr-amber);
+  background: var(--clr-amber-glow);
+}
+
+.feedbackText {
+  font-size: var(--fz-base);
+  color: var(--clr-txt-secondary);
+  line-height: var(--lh-normal);
+}
+
+.feedbackContainerSuccess .feedbackText {
+  color: var(--clr-success);
+}
+.feedbackContainerDanger .feedbackText {
+  color: var(--clr-danger);
+}
+.feedbackContainerWarn .feedbackText {
+  color: var(--clr-amber);
+}

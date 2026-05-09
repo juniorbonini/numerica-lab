@@ -29,9 +29,21 @@ html {
 
   --clr-success: #3de89e;
   --clr-success-glow: rgba(61, 232, 158, 0.15);
-
   --clr-danger: #ff5d6c;
   --clr-danger-glow: rgba(255, 93, 108, 0.15);
-
   --clr-warn: #f5a623;
+
+  --sz-1: 0.4rem;
+  --sz-2: 0.8rem;
+  --sz-3: 1.2rem;
+  --sz-4: 1.6rem;
+  --sz-5: 2rem;
+  --sz-6: 2.4rem;
+  --sz-7: 2.8rem;
+  --sz-8: 3.2rem;
+  --sz-10: 4rem;
+  --sz-12: 4.8rem;
+  --sz-14: 5.6rem;
+  --sz-16: 6.4rem;
+  --sz-20: 8rem;
 }

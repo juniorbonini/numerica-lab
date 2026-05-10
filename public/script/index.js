@@ -16,7 +16,8 @@ const maxAttempts = 10;
 const minNumber = 1;
 const maxNumber = 100;
 
-const randomNumber = (min, max) => Math.floor(Math.random() * max) + min;
+const randomNumber = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
 let attemptsLeft = maxAttempts;
 let rangeMin = minNumber;
 let rangeMax = maxNumber;
@@ -24,7 +25,7 @@ let rangeMax = maxNumber;
 const getElement = (id) => document.getElementById(id);
 const getValue = (id) => getElement(id).value;
 const clearField = () => (getElement("guessInput").value = "");
-const numbetInt = (value) => parseInt(value, 10);
+const numberInt = (value) => parseInt(value, 10);
 const isValidNumber = (number) =>
   isNaN(number) || number < minNumber || number > maxNumber;
 const isRightSecret = (number) => number === secret;
@@ -83,14 +84,14 @@ function updateRange() {
 }
 
 function guessSecret() {
-  const inputValue = numbetInt(getValue("guessInput"));
+  const inputValue = numberInt(getValue("guessInput"));
 
   if (isValidNumber(inputValue)) {
     showMessage("Digite um número válido entre 1 e 100");
     return;
   }
 
-  if (noAttempts()) return; // ← bloqueia se já zerou
+  if (noAttempts()) return;
 
   attemptsLeft--;
   showAttempts();
@@ -104,7 +105,7 @@ function guessSecret() {
 
   if (noAttempts()) {
     showMessage(`Você perdeu! O número secreto era ${secret}.`);
-    endGame(); // ← era engGame(), typo
+    endGame();
     return;
   }
 
@@ -138,4 +139,4 @@ getElement("guessInput").addEventListener("keydown", (e) => {
 });
 
 showAttempts();
-updateGame();
+updateRange();

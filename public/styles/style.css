@@ -109,7 +109,7 @@ body {
   z-index: 0;
 }
 .scanlines {
-  postion: fixed;
+  position: fixed;
   inset: 0;
   background: repeating-linear-gradient(
     to bottom,
@@ -123,8 +123,8 @@ body {
 }
 
 .wrapperContainer {
-  position: relative; /* era postion */
-  display: flex; /* estava faltando */
+  position: relative;
+  display: flex;
   flex-direction: column;
   gap: var(--sz-6);
 }
@@ -158,9 +158,9 @@ body {
 }
 
 .logoSymbol {
-  color: var(--clr-amber); /* era var(clr-amber) sem -- */
+  color: var(--clr-amber);
   text-shadow: 0 0 1.6rem var(--clr-amber);
-  animation: flicker 3s infinite; /* era infinte */
+  animation: flicker 3s infinite;
 }
 
 .logoText {
@@ -173,14 +173,14 @@ body {
   font-family: var(--font-display);
   font-size: var(--fz-md);
   font-weight: var(--fw-bold);
-  color: var(--clr-txt-primary); /* era --clr-text-primary */
+  color: var(--clr-txt-primary);
   letter-spacing: 0.3em;
   line-height: 1;
 }
 
 .logoTagline {
   font-size: var(--fz-xs);
-  color: var(--clr-text-mutted);
+  color: var(--clr-txt-mutted);
   letter-spacing: 0.3em;
   line-height: 1;
 }
@@ -385,14 +385,15 @@ body {
 }
 
 .rangeTrack {
+  position: relative;
   height: 0.8rem;
   background: var(--clr-surface-hi);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-pill);
-  position: relative;
-  overflow: visible;
+  overflow: hidden;
 }
 .rangeFill {
+  position: absolute;
   height: 100%;
   background: linear-gradient(90deg, var(--clr-amber-dim), var(--clr-amber));
   border-radius: var(--radius-pill);
@@ -464,10 +465,13 @@ body {
   -moz-appearance: textfield;
   appearance: textfield;
 }
-.input::-webkit-inner-spin-button,
-.input::webkit-outer-spin-button {
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
+  margin: 0;
 }
+
 .input::placeholder {
   color: var(--clr-txt-muted);
   font-weight: var(--fw-regular);
@@ -513,6 +517,14 @@ body {
 .btnPrimary:active {
   transform: translateY(0);
   box-shadow: var(--shadow-btn);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  pointer-events: none;
 }
 
 .btnIcon {

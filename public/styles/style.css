@@ -84,10 +84,10 @@ html {
 body {
   font-family: var(--font-mono);
   font-size: var(--fz-base);
-  line-height: var(--lg-normal);
+  line-height: var(--lh-normal);
   color: var(--clr-txt-primary);
   background-color: var(--clr-bg);
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,7 +111,7 @@ body {
 .scanlines {
   postion: fixed;
   inset: 0;
-  background: repating-linear-gradient(
+  background: repeating-linear-gradient(
     to bottom,
     transparent,
     transparent 3px,
@@ -123,10 +123,8 @@ body {
 }
 
 .wrapperContainer {
-  postion: relative;
-  z-index: 1;
-  widht: 100%;
-  max-widht: 64rem;
+  position: relative; /* era postion */
+  display: flex; /* estava faltando */
   flex-direction: column;
   gap: var(--sz-6);
 }
@@ -160,9 +158,9 @@ body {
 }
 
 .logoSymbol {
-  color: var(clr-amber);
+  color: var(--clr-amber); /* era var(clr-amber) sem -- */
   text-shadow: 0 0 1.6rem var(--clr-amber);
-  animation: flicker 4s infinte;
+  animation: flicker 3s infinite; /* era infinte */
 }
 
 .logoText {
@@ -175,7 +173,7 @@ body {
   font-family: var(--font-display);
   font-size: var(--fz-md);
   font-weight: var(--fw-bold);
-  color: var(--clr-text-primary);
+  color: var(--clr-txt-primary); /* era --clr-text-primary */
   letter-spacing: 0.3em;
   line-height: 1;
 }
@@ -392,19 +390,17 @@ body {
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-pill);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 .rangeFill {
-  position: absolute;
-  top: 0;
-  left: 0;
   height: 100%;
   background: linear-gradient(90deg, var(--clr-amber-dim), var(--clr-amber));
   border-radius: var(--radius-pill);
   width: 100%;
   transition:
     width var(--transition-slow),
-    left var(--transition-slow);
+    margin-left var(--transition-slow);
+  position: relative;
   box-shadow: 0 0 1.2rem var(--clr-amber-glow);
 }
 
@@ -468,7 +464,7 @@ body {
   -moz-appearance: textfield;
   appearance: textfield;
 }
-.input:webkit-inner-spin-button,
+.input::-webkit-inner-spin-button,
 .input::webkit-outer-spin-button {
   -webkit-appearance: none;
 }
@@ -524,14 +520,6 @@ body {
 }
 .btnPrimary:hover .btnIcon {
   transform: translateX(4px);
-}
-
-.btnPrimary:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-  box-shadow: none;
-  transform: none;
-  pointer-events: none;
 }
 
 .btnGhost {

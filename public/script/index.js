@@ -90,6 +90,8 @@ function guessSecret() {
     return;
   }
 
+  if (noAttempts()) return; // ← bloqueia se já zerou
+
   attemptsLeft--;
   showAttempts();
   clearField();
@@ -102,18 +104,18 @@ function guessSecret() {
 
   if (noAttempts()) {
     showMessage(`Você perdeu! O número secreto era ${secret}.`);
-    engGame();
+    endGame(); // ← era engGame(), typo
     return;
   }
 
   if (numberIsHigher(inputValue)) {
-    rangeMax = inputValue - 1; // chutou alto → fecha o teto
+    rangeMax = inputValue - 1;
     showMessage("O número secreto é menor, tente novamente!");
     updateRange();
     return;
   }
 
-  rangeMin = inputValue + 1; // chutou baixo → sobe o piso
+  rangeMin = inputValue + 1;
   showMessage("O número secreto é maior, tente novamente!");
   updateRange();
 }

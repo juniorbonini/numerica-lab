@@ -526,6 +526,14 @@ body {
   transform: translateX(4px);
 }
 
+.btnPrimary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  pointer-events: none;
+}
+
 .btnGhost {
   padding: var(--sz-3) var(--sz-6);
   background: transparent;

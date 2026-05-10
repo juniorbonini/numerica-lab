@@ -122,8 +122,19 @@ function guessSecret() {
 
 getElement("guessButton").addEventListener("click", guessSecret);
 getElement("restartBtn").addEventListener("click", restartGame);
-getElement("guessInput").addEventListener("keydown", (keydown) => {
-  if (keydown.key === "Enter") guessSecret();
+getElement("guessInput").addEventListener("keydown", (e) => {
+  const allowed = [
+    "Backspace",
+    "Delete",
+    "ArrowLeft",
+    "ArrowRight",
+    "Enter",
+    "Tab",
+  ];
+  if (!/^\d$/.test(e.key) && !allowed.includes(e.key)) {
+    e.preventDefault();
+  }
+  if (e.key === "Enter") guessSecret();
 });
 
 showAttempts();

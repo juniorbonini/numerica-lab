@@ -392,17 +392,19 @@ body {
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-pill);
   position: relative;
-  overflow: visible;
+  overflow: hidden;
 }
 .rangeFill {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   background: linear-gradient(90deg, var(--clr-amber-dim), var(--clr-amber));
   border-radius: var(--radius-pill);
   width: 100%;
   transition:
     width var(--transition-slow),
-    margin-left var(--transition-slow);
-  position: relative;
+    left var(--transition-slow);
   box-shadow: 0 0 1.2rem var(--clr-amber-glow);
 }
 

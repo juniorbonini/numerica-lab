@@ -8,7 +8,13 @@ O jogo gera um número aleatório entre 1 e 100. Você tem 10 tentativas para ad
 
 ## O que tem de diferente
 
-Adicionei uma **barra de intervalo de busca** que mostra graficamente onde o número secreto pode estar e sugere o chute ideal a cada rodada. Isso incentiva o jogador a usar busca binária — sempre chutar o meio do intervalo — o que garante acertar qualquer número entre 1 e 100 em no máximo **7 tentativas**. É uma aplicação direta de algoritmo de busca sem o jogador perceber.
+Implementei **busca binária** como mecânica central do jogo.
+
+A cada chute errado, o intervalo possível é cortado ao meio — se o chute foi alto, o teto cai; se foi baixo, o piso sobe. A barra visual reflete isso em tempo real, e o ponto ideal exibido embaixo é sempre o meio exato do intervalo restante.
+
+A matemática por trás: `log₂(100) ≈ 6.6`, ou seja, arredondando pra cima, qualquer número entre 1 e 100 pode ser encontrado em no máximo **7 tentativas** seguindo essa estratégia — com 10 disponíveis no jogo.
+
+A ideia foi tornar um conceito clássico de algoritmos tangível e jogável, sem que o jogador precise saber o nome do que está fazendo.
 
 ## Tecnologias
 
